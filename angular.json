@@ -20,7 +20,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.css",
@@ -103,7 +104,8 @@
             ]
           }
         }
-      }
+      },
+
     },
     "front-QG-e2e": {
       "root": "e2e/",
