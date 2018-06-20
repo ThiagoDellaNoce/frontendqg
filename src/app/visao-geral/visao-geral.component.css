@@ -1,0 +1,80 @@
+#map{
+    height: 620px;
+  }
+  agm-map {
+    height: 620px;
+  }
+
+  #mapAddDestino {
+    height: 620px;
+  }
+
+  .side-nav
+  {
+    width: 285px;
+  }
+
+  header,
+  main,
+  footer {
+    padding-left: 285px;
+  }
+
+  .side-nav-mini
+  {
+    width: 100px;
+  }
+
+  .main-mini
+  {
+    padding-left: 100px;
+  }
+
+  .header-mini
+  {
+    width: 1545px;
+    position: relative;
+    right: 180px;
+  }
+
+  .side-nav li > a:hover
+  {
+    background-color: #212121;
+    border-left: 5px solid #0c0;
+  }
+
+  .menuActive
+  {
+    background-color: #212121 !important;
+    border-left: 5px solid #0c0;
+  }
+
+  @media only screen and (max-width: 992px) {
+    header,
+    main,
+    footer {
+      padding-left: 0;
+    }
+  }
+
+  .img-logo-mini
+  {
+    padding-top: 10px;
+  }
+  #brand
+  {
+    position: relative;
+    bottom: 10px;
+    font-size: 1.64rem;
+  }
+
+  .material-icons.greenCK
+  {
+    color: #8cd349
+  }
+
+  .costumer
+  {
+    top: 5px;
+    position: relative;
+  }
