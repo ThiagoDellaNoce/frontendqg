@@ -1,4 +1,3 @@
-import { VisaoGeralComponent } from './visao-geral/visao-geral.component';
 import { Routes } from '@angular/router';
 
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -6,8 +5,6 @@ import { ListaComponent } from './lista/lista.component';
 import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
-import { AddComandaComponent } from './add-comanda/add-comanda.component';
 
 export const appRoutes: Routes = [
   { path: '', component: ListaComponent },
@@ -18,7 +15,5 @@ export const appRoutes: Routes = [
 
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
-  { path: '**', component: ListaComponent},
-
-  { path: 'adicionarComanda', component: AddComandaComponent }
+  { path: '**', component: ListaComponent}
 ];

@@ -17,9 +17,6 @@ import { ListaComponent } from './lista/lista.component';
 import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { BlankComponent } from './blank/blank.component';
-
-import { AddComandaComponent } from './add-comanda/add-comanda.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +25,7 @@ import { AddComandaComponent } from './add-comanda/add-comanda.component';
     ListaComponent,
     EditarComponent,
     LoginComponent,
-    SignupComponent,
-    BlankComponent,
-    AddComandaComponent
+    SignupComponent
   ],
   imports: [
     BrowserModule,
