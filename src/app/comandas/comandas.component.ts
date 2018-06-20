@@ -7,13 +7,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 
 @Component({
-  selector: 'app-lista',
-  templateUrl: './lista.component.html',
-  styleUrls: ['./lista.component.css']
+  selector: 'app-comandas',
+  templateUrl: './comandas.component.html',
+  styleUrls: ['./comandas.component.css']
 })
-export class ListaComponent implements OnInit {
+export class ComandasComponent implements OnInit {
 
-  comandas;
+  registros;
 
   baseUrl;
   headers;
@@ -29,18 +29,18 @@ export class ListaComponent implements OnInit {
   ngOnInit() {
 
     if (this.getCookie() != null) {
-      this.getComandas();
+      this.getRegistros();
     } else {
       this.router.navigate(['/login']);
     }
    }
 
   // chama serviço READ
-  getComandas() {
-    this.http.get(this.baseUrl + 'comanda/', {headers: this.headers})
+  getRegistros() {
+    this.http.get(this.baseUrl + 'registro/', {headers: this.headers})
     .subscribe(
       res => {
-        this.comandas = res;
+        this.registros = res;
       },
       err => {
         console.log(err);
@@ -49,12 +49,12 @@ export class ListaComponent implements OnInit {
   }
 
   // chama serviço DELETE
-  deleteComanda(id) {
-    this.http.get(this.baseUrl + 'comanda/delete/' + id, {headers: this.headers})
+  deleteRegistro(id) {
+    this.http.get(this.baseUrl + 'registro/delete/' + id, {headers: this.headers})
     .subscribe(
       res => {
         alert(res);
-        this.router.navigate(['/listar']);
+        this.router.navigate(['/comandas']);
       },
       err => {
         console.log(err);

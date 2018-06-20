@@ -17,6 +17,8 @@ import { ListaComponent } from './lista/lista.component';
 import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CadastroRegistroComponent } from './cadastro-registro/cadastro-registro.component';
+import { ComandasComponent } from './comandas/comandas.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SignupComponent } from './signup/signup.component';
     ListaComponent,
     EditarComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CadastroRegistroComponent,
+    ComandasComponent
   ],
   imports: [
     BrowserModule,

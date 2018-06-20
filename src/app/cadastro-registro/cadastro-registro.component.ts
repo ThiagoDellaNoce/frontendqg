@@ -7,11 +7,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  selector: 'app-cadastro-registro',
+  templateUrl: './cadastro-registro.component.html',
+  styleUrls: ['./cadastro-registro.component.css']
 })
-export class EditarComponent implements OnInit {
+export class CadastroRegistroComponent implements OnInit {
 
   comanda;
 
@@ -73,6 +73,32 @@ export class EditarComponent implements OnInit {
           console.log(res);
         },
         err => { console.log(err); }
+      );
+
+      // adicionar registro
+      this.http.post(this.baseUrl + 'registro/adicionar',
+        {
+          'name': this.name,
+          'mesa': this.mesa,
+          'consumidos': this.consumidos
+        }, {headers: this.headers})
+      .subscribe(
+        res => {
+          this.statusEdit = true;
+          console.log(res);
+        },
+        err => { console.log(err); }
+      );
+      // apagar comanda
+      this.http.get(this.baseUrl + 'comanda/delete/' + params['id'], {headers: this.headers})
+      .subscribe(
+        res => {
+          alert(res);
+          this.router.navigate(['/listar']);
+        },
+        err => {
+          console.log(err);
+        }
       );
 
     });

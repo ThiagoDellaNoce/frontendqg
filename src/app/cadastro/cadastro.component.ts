@@ -26,7 +26,7 @@ export class CadastroComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router, private _cookieService: CookieService) {
 
-    this.baseUrl = 'https://warm-wave-49664.herokuapp.com/';
+    this.baseUrl = 'https://backendqg.herokuapp.com/';
 
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
 
@@ -47,7 +47,7 @@ export class CadastroComponent implements OnInit {
     this.consumidos = f.controls.consumidos.value;
 
     // requisição HTTP
-    this.http.post(this.baseUrl + 'contacts/add',
+    this.http.post(this.baseUrl + 'comanda/adicionar',
       {
         'name': this.name,
         'mesa': this.mesa,
@@ -56,6 +56,7 @@ export class CadastroComponent implements OnInit {
     .subscribe(
       res => {
         this.statusInsert = true;
+        console.log(res);
       },
       err => {
         console.log(err);

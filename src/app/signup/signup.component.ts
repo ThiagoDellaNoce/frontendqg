@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   data;
 
   constructor(private http: HttpClient, private router: Router, private _cookieService: CookieService) {
-    this.baseUrl = 'https://warm-wave-49664.herokuapp.com/';
+    this.baseUrl = 'https://backendqg.herokuapp.com/';
 
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
 
