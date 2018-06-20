@@ -31,7 +31,7 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {useHash: true}),
+    RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot(),
     CookieModule.forRoot()
   ],
