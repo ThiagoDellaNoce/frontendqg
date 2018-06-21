@@ -20,8 +20,6 @@ export class CadastroComponent implements OnInit {
   baseUrl;
   headers;
 
-  statusInsert: boolean;
-
   data;
 
   constructor(private http: HttpClient, private router: Router, private _cookieService: CookieService) {
@@ -30,7 +28,6 @@ export class CadastroComponent implements OnInit {
 
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
 
-    this.statusInsert = false;
   }
 
   ngOnInit() {
@@ -55,7 +52,7 @@ export class CadastroComponent implements OnInit {
       }, {headers: this.headers})
     .subscribe(
       res => {
-        this.statusInsert = true;
+        this.router.navigateByUrl('/lista');
         console.log(res);
       },
       err => {

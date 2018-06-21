@@ -22,8 +22,6 @@ export class CadastroRegistroComponent implements OnInit {
   baseUrl;
   headers;
 
-  statusEdit: boolean;
-
   data;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private _cookieService: CookieService) {
@@ -69,7 +67,6 @@ export class CadastroRegistroComponent implements OnInit {
         }, {headers: this.headers})
       .subscribe(
         res => {
-          this.statusEdit = true;
           console.log(res);
         },
         err => { console.log(err); }
@@ -84,7 +81,6 @@ export class CadastroRegistroComponent implements OnInit {
         }, {headers: this.headers})
       .subscribe(
         res => {
-          this.statusEdit = true;
           console.log(res);
         },
         err => { console.log(err); }

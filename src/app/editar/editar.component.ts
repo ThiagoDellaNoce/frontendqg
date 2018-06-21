@@ -22,8 +22,6 @@ export class EditarComponent implements OnInit {
   baseUrl;
   headers;
 
-  statusEdit: boolean;
-
   data;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private _cookieService: CookieService) {
@@ -69,7 +67,7 @@ export class EditarComponent implements OnInit {
         }, {headers: this.headers})
       .subscribe(
         res => {
-          this.statusEdit = true;
+          this.router.navigateByUrl('/lista');
           console.log(res);
         },
         err => { console.log(err); }

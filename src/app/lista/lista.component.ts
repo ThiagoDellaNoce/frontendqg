@@ -50,16 +50,18 @@ export class ListaComponent implements OnInit {
 
   // chama serviço DELETE
   deleteComanda(id) {
-    this.http.get(this.baseUrl + 'comanda/delete/' + id, {headers: this.headers})
-    .subscribe(
-      res => {
-        alert(res);
-        this.router.navigate(['/listar']);
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    if (confirm('Tem certeza que deseja deletar a comanda?')) {
+      this.http.get(this.baseUrl + 'comanda/delete/' + id, {headers: this.headers})
+      .subscribe(
+        res => {
+          window.location.reload();
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
+
   }
 
   getCookie() {
