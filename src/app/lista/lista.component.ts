@@ -33,15 +33,6 @@ export class ListaComponent implements OnInit {
     } else {
       this.router.navigate(['/login']);
     }
-
-    App.filter('strReplace', function () {
-      return function (input, from, to) {
-        input = input || '';
-        from = from || '';
-        to = to || '';
-        return input.replace(new RegExp(from, 'g'), to);
-      };
-    });
    }
 
   // chama serviço READ
