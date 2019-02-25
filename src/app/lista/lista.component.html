@@ -1,17 +1,18 @@
 <div class="row" >
   <div class="col s12">
-    <h4>Visão Geral</h4>
+    <h5>Comandas abertas</h5>
   </div>
 
   <div class="col s12 m3" *ngFor="let comanda of comandas">
     <div class="card">
-        <button (click)="deleteComanda(comanda._id)"  class="right btn-floating waves-effect waves-light btn red darken-2">
+        <button (click)="deleteComanda(comanda._id)" style="margin: 5px" class="right btn-floating waves-effect waves-light btn red darken-2">
           <i class="material-icons">delete</i>
         </button>
       <div class="card-content center-align">
-        <span class="card-title">{{ comanda.name }}</span>
-        <span class="card-subtitle"><b>{{ comanda.mesa }}</b></span><br>
-        <span class="card-subtitle">{{ comanda.consumidos }}</span><br>
+        <span class="card-title truncate">{{ comanda.name }}</span>
+        <span class="card-subtitle truncate" *ngIf="comanda.mesa"><b>{{ comanda.mesa }}</b></span><br>
+        <span class="card-subtitle truncate" *ngIf="!comanda.mesa"><b>QG</b></span><br>
+        <span class="card-subtitle truncate">{{ comanda.consumidos }}</span><br>
       </div>
       <div class="card-action">
         <a class="waves-effect waves-light btn red darken-2" [routerLink]="['/editar', comanda._id]"><i class="material-icons">edit</i></a>
